@@ -137,6 +137,7 @@ def train(env, nb_epochs, nb_epoch_cycles, render_eval, reward_scale, render, pa
                             eval_episode_rewards_history.append(eval_episode_reward)
                             eval_episode_reward = 0.
 
+            saver.save(sess, "/home/rrc/baselines/baselines/ddpg/saved_model/my complete model", global_step=1000)
             mpi_size = MPI.COMM_WORLD.Get_size()
             # Log stats.
             # XXX shouldn't call np.mean on variable length lists
